@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>
+  {{data.headerMessage}}
+</h1>
+<div mat-dialog-content>
+  <h3>{{data.errorMessage}}</h3>
+  <p *ngFor="let item of data.conflictLines">
+    <ng-container *ngIf="isAnObject(item)">
+      <ng-container *ngFor="let subItem of item | keyvalue; let i = index">
+        {{ getItemName(subItem)| titlecase}}: {{subItem.value}}
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="isAString(item)">
+      {{item}}
+    </ng-container>
+  </p>
+</div>
+<div class="buttons-section" mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="closeDialog()">
+    Close
+  </button>
+  <button *ngIf="data.continue" mat-raised-button class="confirm-button" color="warn" (click)="confirm()">
+    Contiunue
+  </button>
+</div>
