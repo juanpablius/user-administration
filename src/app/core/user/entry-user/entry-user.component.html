@@ -1,0 +1,32 @@
+<form *ngIf="userForm" [formGroup]="userForm">
+  <h1 mat-dialog-title>
+    <strong>{{data.headerMessage}}</strong>
+  </h1>
+  <div class="container-fields" mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Name </mat-label>
+      <input matInput formControlName="first_name" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last name </mat-label>
+      <input matInput formControlName="last_name" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Iban </mat-label>
+      <input matInput formControlName="iban" autocomplete="off" />
+    </mat-form-field>
+  </div>
+  <div class="buttons-section" mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="closeDialog()">
+      Cancel
+    </button>
+    <ng-container [ngSwitch]="userForm.valid">
+      <button *ngSwitchCase="true" mat-raised-button color="primary" (click)="onSubmit()">
+        {{data.action}}
+      </button>
+      <button *ngSwitchDefault mat-raised-button disabled matTooltip="Rellena los campos obligatorios. (*)">
+        {{data.action}}
+      </button>
+    </ng-container>
+  </div>
+</form>
