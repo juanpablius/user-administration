@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "first_name": "test",
+      "last_name": "es",
+      "iban": "ES2134235232434543523",
+      "own": "105696977583616359606",
+      "id": 1
+    },
+    {
+      "first_name": "test",
+      "last_name": "rfrefre",
+      "iban": "ES2122323232323232323",
+      "own": "111171370353262727214",
+      "id": 2
+    },
+    {
+      "first_name": "JUANPABLO",
+      "last_name": "12312cast",
+      "iban": "ES210202020202020123",
+      "own": "105696977583616359606",
+      "id": 4
+    },
+    {
+      "first_name": "aqa",
+      "last_name": "asa321",
+      "iban": "ES3102340122245633211",
+      "own": "111171370353262727214",
+      "id": 5
+    }
+  ]
+}
