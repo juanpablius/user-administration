@@ -1,0 +1,1 @@
+export const IBAN_PATTERN: string = `^[A-Z]{2}(?:[ ]?[0-9]){18,20}$`;

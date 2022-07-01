@@ -1,0 +1,38 @@
+<div class="table_container mat-elevation-z8">
+  <div class="table-paginator">
+    <div class="table-mat-table" >
+      <table mat-table class="table" [dataSource]="dataSource" matSort>
+        <!-- Dynamic content -->
+        <ng-container *ngFor="let label of columns" matColumnDef="{{ label.name }}">
+          <mat-header-cell class="column" *matHeaderCellDef mat-sort-header >
+            {{label.displayName}}
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="default-cell">
+            <div class="desktop-content">
+              {{element[label.name]}}
+            </div>
+          </mat-cell>
+        </ng-container>
+    
+        <!-- Actions -->
+        <ng-container matColumnDef="action">
+          <mat-header-cell class="final_column" *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let row" class="final_column">
+            <button  matTooltip="Edit" mat-icon-button (click)="updateRow(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button  matTooltip="Delete" mat-icon-button (click)="deleteRow(row)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+    
+        <!-- Content -->
+        <mat-header-row *matHeaderRowDef="columnLabels" class="table_header"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnLabels;"></mat-row>
+      </table>
+    </div>   
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10">
+    </mat-paginator>
+  </div>
+</div>

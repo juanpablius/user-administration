@@ -1,0 +1,13 @@
+<div class="session-section">
+  <ng-container *ngIf="isLoggedIn();  else loginTemplate">
+    <h1>Hi and welcome!</h1>
+    <h2>Name: {{ userInfo?.info?.name }}</h2>
+    <button mat-raised-button color="warn" (click)="logout()">Logout from Google</button>
+  </ng-container>
+  <ng-template  #loginTemplate>
+    <button mat-raised-button color="primary" (click)="login()">Login with Google</button>
+  </ng-template>
+</div>
+
+
+<router-outlet></router-outlet>

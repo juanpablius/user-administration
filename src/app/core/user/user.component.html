@@ -1,0 +1,13 @@
+ <div *ngIf="showSpinner$ | async as showSpinner" class="spinner">
+   <mat-spinner class="spinner-2"></mat-spinner>
+ </div>
+ <button mat-raised-button color="primary"  class="addUser-btn" (click)="addUser()">Add user</button>
+
+<jp-table
+  *ngIf="users$ | async as users"
+  class="users-table"
+  [dataSource]="users"
+  [columns]="columns"
+  (updatedRow)="updateUser($event)"
+  (deletedRow)="deleteUser($event)">
+</jp-table>
