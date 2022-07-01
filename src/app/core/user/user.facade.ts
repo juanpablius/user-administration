@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {Observable, Subject, Subscription} from 'rxjs';
 import {finalize, tap} from 'rxjs/operators';
 import {OAuthConfigurationService} from 'src/app/auth/services/oauth-configuration.service';
-import {WarningPopupComponent, WarningPopupInput} from 'src/app/shared/components/table/warning/warning-popup.component';
+import {WarningPopupComponent, WarningPopupInput} from 'src/app/shared/components/warning/warning-popup.component';
 
 import {UserCall} from './user.call';
 import {User} from './user.interface';
@@ -42,6 +42,7 @@ export class UserFacade {
 
   public addUser(user: User): void {
     this._userState.setUpdating(true);
+    user.own = this._oAuthConfigurationService.userInfo?.info?.sub;
     this._userCall.addUser(user)
         .pipe(
             tap(({id}) => {
@@ -90,7 +91,6 @@ export class UserFacade {
   }
 
   private _verifyOwner(user: User): boolean {
-    this._oAuthConfigurationService.userInfo?.info?.sub === user.own;
    return this._oAuthConfigurationService.userInfo?.info?.sub === user.own;
   }
 

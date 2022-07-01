@@ -7,7 +7,7 @@ import {
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 import {IBAN_PATTERN} from '../../constants';
-import {CreatePopupInput} from '../../interfaces/pop-up';
+import {CreatePopupInput} from '../../../shared/interfaces/pop-up';
 import {User} from '../user.interface';
 
 export interface EntryUserInput extends User, CreatePopupInput {}

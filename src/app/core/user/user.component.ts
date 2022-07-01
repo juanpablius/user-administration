@@ -5,7 +5,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Observable, Subject} from 'rxjs';
 import {filter, map, tap} from 'rxjs/operators';
 
-import {Action, CreatePopupInput} from '../interfaces/pop-up';
+import {Action, CreatePopupInput} from '../../shared/interfaces/pop-up';
 
 import {EntryUserComponent, EntryUserInput, EntryUserOutput,} from './entry-user/entry-user.component';
 import {TABLE_HEADERS} from './user.constants';

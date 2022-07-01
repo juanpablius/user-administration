@@ -14,7 +14,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {Subject} from 'rxjs';
 import {filter} from 'rxjs/operators';
-import { Action } from 'src/app/core/interfaces/pop-up';
+import { Action } from 'src/app/shared/interfaces/pop-up';
 
 
 

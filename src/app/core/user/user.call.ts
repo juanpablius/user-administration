@@ -17,6 +17,12 @@ export class UserCall {
   public constructor(private readonly _http: HttpClient) {}
 
   public getUsers(): Observable<User[]> {
+    let baseUrl: string = this._baseUrl;
+
+    // Removed final slash from the base route when the environment is the docker provided.
+    if (environment.production) {
+      baseUrl = baseUrl.slice(0, -1);
+    }
     return this._http.get<User[]>(this._baseUrl);
   }
 

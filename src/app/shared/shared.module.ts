@@ -28,7 +28,7 @@ import {MatTreeModule} from '@angular/material/tree';
 
 import {DeleteTablePopupComponent} from './components/table/pop-ups/delete-item.component';
 import {TableComponent} from './components/table/table.component';
-import {WarningPopupComponent} from './components/table/warning/warning-popup.component';
+import {WarningPopupComponent} from './components/warning/warning-popup.component';
 
 @NgModule({
   declarations: [

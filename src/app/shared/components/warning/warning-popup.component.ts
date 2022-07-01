@@ -1,6 +1,6 @@
 import {Component, Inject, Optional} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Action} from 'src/app/core/interfaces/pop-up';
+import {Action} from 'src/app/shared/interfaces/pop-up';
 
 export interface WarningPopupInput {
   errorMessage?: string;
