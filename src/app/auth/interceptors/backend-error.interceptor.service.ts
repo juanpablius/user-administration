@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {WarningPopupComponent, WarningPopupInput} from 'src/app/shared/components/table/warning/warning-popup.component';
+import {WarningPopupComponent, WarningPopupInput} from 'src/app/shared/components/warning/warning-popup.component';
 
 @Injectable()
 export class BackendErrorInterceptor implements HttpInterceptor {
@@ -20,7 +20,7 @@ export class BackendErrorInterceptor implements HttpInterceptor {
   }
 
   private _check401Error(httpResponse: HttpResponse<any>): void {
-    if (httpResponse instanceof HttpErrorResponse && (httpResponse.error === 412 || httpResponse.status === 412)) {
+    if (httpResponse instanceof HttpErrorResponse && (httpResponse.error === 401 || httpResponse.status === 401)) {
       const data: WarningPopupInput = {
         headerMessage: 'You are not allowed to perform this action',
         errorMessage: `You don't have permission to perform this action`,
@@ -46,3 +46,4 @@ export class BackendErrorInterceptor implements HttpInterceptor {
       });
     }
   }
+}
