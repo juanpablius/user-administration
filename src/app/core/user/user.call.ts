@@ -23,7 +23,7 @@ export class UserCall {
     if (environment.production) {
       baseUrl = baseUrl.slice(0, -1);
     }
-    return this._http.get<User[]>(this._baseUrl);
+    return this._http.get<User[]>(baseUrl);
   }
 
   public addUser(user: User): Observable<GenericResponse> {

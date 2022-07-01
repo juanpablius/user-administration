@@ -13,7 +13,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (this._oAuthConfigurationService.getToken() && !WHITE_LIST.some((domain: string) => req.url.includes(domain))) {
-      req = req.clone({headers: req.headers.set('Authorization', `Bearer ${this._oAuthConfigurationService.getToken()}`)});
+      req = req.clone({headers: req.headers.set('Authorization', `Token ${this._oAuthConfigurationService.getToken()}`)});
     }
     return next.handle(req);
   }
