@@ -6,24 +6,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Choose a backend before running the frontend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## A) Using a json-server database 
 
-## Build
+To use a local database you need to install the following server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Install a server to run your json file a server
+npm i -g json-server 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
+# Run the backend
 json-server --watch db.json --port 4000
+
+# Launch frontend pointing to the json server
+ng -s --port 8001
+```
+
+## B) Using the docker server
+
+The steps to launch the docker server are omitted in this repo
+
+```bash
+ng s --port 8001 -c production
+```
